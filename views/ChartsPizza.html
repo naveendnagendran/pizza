@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta charset="utf-8">
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Build Your Own Pizza</title>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="jumbotron">
+      <div class="container">
+      	<h1>Pizza Order Summary</h1>
+        <p>Below displayed is the final summary of your selection in Google Charts</p>
+      </div>
+</div>
+
+
+<div class="row">
+ <div class="col-md-5" style="margin-left:10%">
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="col-md-6" id="chart_div" style="width: 600px; height: 400px;"></div>
+  </div>
+  </div>
+</div>
+
+ <div class="col-md-5">
+<div class="panel panel-default">
+  <div class="panel-body">
+     <div class="col-md-6" id="donut_chart_div" style="width: 600px; height: 400px;"></div>
+  </div>
+</div>
+</div>
+
+</div><br>
+<div class="row">
+<div class="col-md-5"></div>
+<div class="col-md-4">
+<a href="PizzaHomePage.html" class="btn btn-primary">Click here to return to Home Page</a>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script>
+var localSelectedValue=localStorage.getItem("selectedValue");
+var chartDataSplit = localSelectedValue.split("+");
+var temp=[];
+for(i=0;i<chartDataSplit.length-1;i++)
+{
+	temp[i]=[chartDataSplit[i],1];
+}
+
+google.load('visualization', '1.0', {'packages':['corechart']});
+google.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Topping');
+  data.addColumn('number', 'Slices');
+  for(i=0;i<chartDataSplit.length-1;i++)
+	{ 
+	  data.addRows([temp[i]]);
+ }
+  // Set chart options for pie and donut
+  var options = {'title':'Order Summary in Pie Chart',is3D: true,};
+  var donutOptions = {'title':'Order Summary in Donut Chart',pieHole: 0.4,};
+  
+  // draws pie chart
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+  
+  //draws donut chart
+  var donutChart = new google.visualization.PieChart(document.getElementById('donut_chart_div'));
+  donutChart.draw(data, donutOptions);
+  
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Build Your Own Pizza</title>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+ <div class="jumbotron">
+      <div class="container">
+        <h1>Build Your Own Pizza</h1>
+        <p>Select from the below mentioned tabs and build your own pizza.Finally see your picks in Google charts</p>
+      </div>
+    </div>
+
+
+<div class="container">
+<div role="tab-panel">
+<ul class="nav nav-tabs">
+  <li role="presentation"> <!-- class="active" --><a href="#sizeCrust" id="sizecrust-tab" role="tab" data-toggle="tab"><strong>SIZE & CRUST</strong></a></li>
+  <li role="presentation" ><a href="#cheesetopping" id="cheesetopping-tab" role="tab" data-toggle="tab"><strong>CHEESE & SAUCE / TOPPINGS </strong></a></li>
+  <!-- <li role="presentation"><a href="#cheesetopping">TOPPINGS</a></li> -->
+</ul>
+
+<!-- Tab content -->
+
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="sizeCrust"><br>
+    <h4 style="color:#337ab7">CHOOSE SIZE & CRUST</h4>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5 style="color:#337ab7"><strong>HAND TOSSED</strong></h2>
+          <p>Garlic-seasoned crust with a rich, buttery taste</p>
+			 
+			 <div class="radio">
+      			<label><input type="radio" name="optradio" value="Hand Tossed Small">Small (10")</label>
+   			 </div>
+   			 <div class="radio">
+      			<label><input type="radio" name="optradio" value="Hand Tossed Medium">Medium (12")</label>
+    		</div>
+			 <div class="radio">
+      			<label><input type="radio" name="optradio" value="Hand Tossed Large">Large (14")</label>
+    		</div>
+    		<div class="radio">
+      			<label><input type="radio" name="optradio" value="Hand Tossed X-Large">X-Large (16")</label>
+    		</div>
+			 
+        </div>
+        <div class="col-md-3">
+          <h5 style="color:#337ab7"><strong>HANDMADE PAN</strong></h5>
+          <p>Two layers of cheese,toppings to the edge and a thin crust that bakes up golden and crispy with a buttery taste </p>
+          <div class="radio">
+      			<label><input type="radio" name="optradio" value="Handmade Pan Medium">Medium (12")</label>
+    		</div>
+       </div>
+        <div class="col-md-3">
+           <h5 style="color:#337ab7"><strong>CRUNCHY THIN CRUST</strong></h5>
+          <p>Thin enough for the optimum crispy to crunchy ratio</p>
+           <div class="radio">
+      			<label><input type="radio" name="optradio" value="Crunchy Thin Medium">Medium (12")</label>
+    		</div>
+			 <div class="radio">
+      			<label><input type="radio" name="optradio" value="Crunchy Thin Large">Large (14")</label>
+    		</div>
+        </div>
+        <div class="col-md-3">
+          <h5 style="color:#337ab7"><strong>BROOKLYN STYLE</strong></h5>
+          <p>Hand stretched to be big,thin and perfectly foldable</p>
+           <div class="radio">
+      			<label><input type="radio" name="optradio" value="Brooklyn Style Large">Large (14")</label>
+    		</div>
+    		<div class="radio">
+      			<label><input type="radio" name="optradio" value="Brooklyn Style X-Large">X-Large (16")</label>
+    		</div>
+       </div>     
+       
+      </div><!-- End of row 1 -->
+		
+		<div class="row">
+ 		<div class="col-md-3">
+          <h5 style="color:#337ab7"><strong>GLUTEN FREE CRUST</strong></h5>
+          <p>Domino's pizza made with a Gluten Free Crust</p>
+          <div class="radio">
+      		<label><input type="radio" name="optradio" value="Gluten Free Small">Small (10")</label>
+   		  </div>
+       	</div>
+       	<div class="col-md-3 col-md-offset-6">
+       <a href="#cheesetopping" class="btn btn-primary" id="crusttab" data-toggle="tab" onclick="getRadioValue()">Pick your Cheese and toppings</a>
+       	</div>
+		</div><!-- end of row 2 -->
+    </div>
+    </div><!-- end of sizecrust tab -->
+    
+     
+    <div role="tabpanel" class="tab-pane" id="cheesetopping"><br>
+    <h4 style="color:#337ab7">CHOOSE CHEESE & TOPPINGS</h4>
+    <div class="container">
+    <form>
+    <div class="row">
+    
+   	<div class="col-md-6">
+   	 <h5 style="color:#337ab7"><strong>CHOOSE MEATS</strong></h2>
+  	<div class="col-md-5">
+  	  <div class="checkbox">
+      <label><input type="checkbox" value="Pepperoni">Pepperoni</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" value="Italian Saucage">Italian Saucage</label>
+    </div>
+  	<div class="checkbox">
+      <label><input type="checkbox" value="Sliced Italian Saucage">Sliced Italian Saucage</label>
+    </div>
+  	<div class="checkbox">
+      <label><input type="checkbox" value="Beef">Beef</label>
+    </div>
+  	<div class="checkbox">
+      <label><input type="checkbox" value="Philly Steak">Philly Steak</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" value="Ham">Ham</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" value="Bacon">Bacon</label>
+    </div>
+    </div>
+    <div class="col-md-5">
+     <div class="checkbox">
+      <label><input type="checkbox" value="Salami">Salami</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" value="Premium Chicken">Premium Chicken</label>
+    </div>
+    </div>
+  	</div>
+  	
+  	<div class="col-md-6">
+  	 <h5 style="color:#337ab7"><strong>CHOOSE NON-MEATS</strong></h2>
+  		<div class="col-md-5">
+		  	  	<div class="checkbox">
+		      <label><input type="checkbox" value="Cheddar Cheese">Cheddar Cheese</label>
+		    </div>
+		    <div class="checkbox">
+		      <label><input type="checkbox" value="Feta Cheese">Feta Cheese</label>
+		    </div>
+		  	<div class="checkbox">
+		      <label><input type="checkbox" value="Shredded Parmesan Asiago">Shredded Parmesan Asiago</label>
+		    </div>
+		  	<div class="checkbox">
+		      <label><input type="checkbox" value="Shredded Provolone cheese">Shredded Provolone cheese</label>
+		    </div>
+		  	<div class="checkbox">
+		      <label><input type="checkbox" value="Banana Peppers">Banana Peppers</label>
+		    </div>
+		    <div class="checkbox">
+		      <label><input type="checkbox" value="Black Olives">Black Olives</label>
+		    </div>
+		    <div class="checkbox">
+		      <label><input type="checkbox" value="Garlic">Garlic</label>
+		    </div>
+    	</div>
+    	
+    	 <div class="col-md-5">
+		     <div class="checkbox">
+		      <label><input type="checkbox" value="Green Peppers">Green Peppers</label>
+		    </div>
+		    <div class="checkbox">
+		      <label><input type="checkbox" value="Jalapeno Peppers">Jalapeno Peppers</label>
+		    </div>
+		    <div class="checkbox">
+		      <label><input type="checkbox" value="Mushrooms">Mushrooms</label>
+		    </div>
+		    <div class="checkbox">
+		      <label><input type="checkbox" value="Pineapple">Pineapple</label>
+		    </div>
+		    <div class="checkbox">
+		      <label><input type="checkbox" value="Onions">Onions</label>
+		    </div>
+		    <div class="checkbox">
+		      <label><input type="checkbox" value="Roasted Red Peppers">Roasted Red Peppers</label>
+		    </div>
+		    <div class="checkbox">
+		      <label><input type="checkbox" value="Spinach">Spinach</label>
+		    </div>
+		    <div class="checkbox">
+		      <label><input type="checkbox" value="Dice Tomatoes">Dice Tomatoes</label>
+		    </div>
+		    <div class="checkbox">
+		      <label><input type="checkbox" value="Hot Sauce">Hot Sauce</label>
+		    </div>
+    	</div>
+  	</div>
+  	</div><!-- end of row -->
+  	</form>
+	</div><!-- END OF CONTAINER DIV -->
+	
+	<a href="ChartsPizza.html" class="btn btn-success" onclick="getCheckedValues()">Build Order</a>&nbsp;&nbsp;&nbsp; 
+	<a href="#sizeCrust" class="btn btn-success" data-toggle="tab" onclick="clearOption()">Cancel</a>
+	
+	</div>
+ </div>
+
+</div><!-- end of tab panel -->
+</div><!--container end  -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script>
+var	selectedValues = "";
+function getCheckedValues() {
+
+  var checkedValues = document.forms[0];
+  var i;
+  for (i = 0; i < checkedValues.length; i++) {
+  	if (checkedValues[i].checked) {
+      	selectedValues = selectedValues + checkedValues[i].value + "+";
+      }
+  }
+ localStorage.setItem("selectedValue",selectedValues);
+}
+
+function clearOption()
+{
+	var clearValue = document.forms[0];
+	var i;
+	for (i = 0; i < clearValue.length; i++) {
+	 document.forms[0][i].checked = false;
+	}
+	$("input:radio").attr("checked", false);
+}
+
+function getRadioValue()
+{
+	var crustName=$("input:radio[name=optradio]:checked" ).val();
+	if(crustName!=null)
+		{
+		selectedValues=crustName+"+";
+		}
+	if(crustName==undefined)
+		{
+		selectedValues="";
+		}
+}
+
+</script>
+</body>
+</html>
